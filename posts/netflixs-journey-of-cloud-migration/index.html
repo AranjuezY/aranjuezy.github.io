@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Netflix&#39;s Journey of Cloud Migration | Blog Template</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+
+    
+    
+    
+    <link rel="stylesheet" href="/css/styles.min.bf7274ed1e0e480f4aba84eda549d4c6054c1e1e321928ae11cb1c34cfa0d2ca.css" integrity="sha256-v3J07R4OSA9KuoTtpUnUxgVMHh4yGSiuEcscNM&#43;g0so=">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    
+    <script src="/js/bootstrap.bundle.min.0833b2e9c3a26c258476c46266e6877fc75218625162e0460be9a3a098a61c6c.js" integrity="sha256-CDOy6cOibCWEdsRiZuaHf8dSGGJRYuBGC&#43;mjoJimHGw=" defer></script>
+
+    
+    <script type="text/javascript" src="/js/scripts.js"></script>
+    
+</head>
+
+<body>
+    <header>
+        <div class="dropdown">
+            <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                aria-expanded="false">
+                en
+            </button>
+            <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="/zh">zh</a></li>
+                <li><a class="dropdown-item" href="/">en</a></li>
+            </ul>
+        </div>
+        
+        <nav class="navbar navbar-expand-lg mb-5">
+    <div class="d-flex px-5">
+        <a class="navbar-brand" href="/">Blog Template</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                
+                <li class="nav-item">
+                    <a class="nav-link" href="/posts/">Posts</a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link" href="/search">Search</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+    </header>
+
+    <main class="container mt-4">
+        
+
+<div data-pagefind-body class="row">
+    <h1 class="pb-4">Netflix&#39;s Journey of Cloud Migration</h1>
+
+    <div class="col-3">
+        <div class="pt-5 px-2 sticky-top"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#part-1-background-of-netflix">Part 1: Background of Netflix</a>
+      <ul>
+        <li><a href="#origin-mail-based-dvd-rental-business">Origin: Mail-based DVD Rental Business</a></li>
+        <li><a href="#transition-to-streaming-services">Transition to Streaming Services</a></li>
+        <li><a href="#the-2008-crisis">The 2008 Crisis</a></li>
+        <li><a href="#migration-to-aws">Migration to AWS</a></li>
+      </ul>
+    </li>
+    <li><a href="#part-2-the-transition-of-netflix-business-model">Part 2: The Transition of Netflix Business Model</a>
+      <ul>
+        <li><a href="#dvd-business-model-vs-streaming-business-model">DVD Business Model vs. Streaming Business Model</a></li>
+        <li><a href="#challenges-of-transition">Challenges of Transition</a></li>
+      </ul>
+    </li>
+    <li><a href="#part-3-details-of-data-center-migration">Part 3: Details of Data Center Migration</a>
+      <ul>
+        <li><a href="#planning-and-strategy">Planning and Strategy</a></li>
+        <li><a href="#execution-and-implementation">Execution and Implementation</a></li>
+        <li><a href="#post-migration">Post-Migration</a></li>
+      </ul>
+    </li>
+    <li><a href="#part-4-the-final-stage">Part 4: The Final Stage</a>
+      <ul>
+        <li><a href="#completion-of-migration">Completion of Migration</a></li>
+        <li><a href="#impact-on-netflix">Impact on Netflix</a></li>
+        <li><a href="#conclusion">Conclusion</a></li>
+      </ul>
+    </li>
+    <li><a href="#references">References</a></li>
+  </ul>
+</nav></div>
+    </div>
+
+    <div id="mainframe" class="col-9">
+        <div class="px-2">
+            <div><h2 id="part-1-background-of-netflix">Part 1: Background of Netflix</h2>
+<h3 id="origin-mail-based-dvd-rental-business">Origin: Mail-based DVD Rental Business</h3>
+<p>Netflix was founded by Reed Hastings and Marc Randolph in 1997. It started as a company that provides mail-based DVD rental service. A customer can browse and choose movies to rent on Netflix’s website, then Netflix will mail the movies to the customer’s address.</p>
+<h3 id="transition-to-streaming-services">Transition to Streaming Services</h3>
+<p>Starting from 2007, Netflix began to experiment with streaming services. Netflix initially built a streaming library of old movies and TV shows and continued to expand it with more and more content. This helped Netflix laid the foundation of its future success, but at the beginning it was only a small part of its business.</p>
+<h3 id="the-2008-crisis">The 2008 Crisis</h3>
+<p>In 2008, Netflix encountered a severe crisis. The global financial crisis hit all over the world. In August, Netflix experienced a data corruption caused by a hardware failure that did not report any detectable errors. This accident prevented Netflix shipping DVDs to its customers for 3 days, which was fatal to its online business.</p>
+<h3 id="migration-to-aws">Migration to AWS</h3>
+<p>The data accident in 2008 highlighted the vulnerability of Netflix’s infrastructure, especially its reliance on vertically scaled systems (like relational databases). Considered with its growing business and potential infrastructure risks, Netflix made the decision to start migrating its online business to AWS. This journey to the cloud took Netflix 7 years. In the end of 2015, Netflix finally migrated all its system to AWS.</p>
+<h2 id="part-2-the-transition-of-netflix-business-model">Part 2: The Transition of Netflix Business Model</h2>
+<h3 id="dvd-business-model-vs-streaming-business-model">DVD Business Model vs. Streaming Business Model</h3>
+<p>Netflix was originally a DVD rental service company, competing with dominating companies such as Blockbuster. Offline DVD rental market growth was plateauing at that time, but Netflix’s innovation was to move the DVD stores to the Internet. Netflix pioneers with a user-friendly website, a subscription-based model, and a no-late-free policy. By leveraging online data, Netflix was able to provide personalized recommendations to every customer.</p>
+<p>With its roots in online business, it was a natural progression for Netflix to start its streaming service. Customers can browse the online library and choose any title, then the video data will be delivered from Netflix’s data center to the customers via CDN. Netflix had an initial catalog included only about 1,000 titles, focusing on older movies and niche content due to limited licensing agreements.</p>
+<h3 id="challenges-of-transition">Challenges of Transition</h3>
+<p><strong>Capacity:</strong> Based on Netflix’s estimate, as each customer starts using the streaming service, the data center will endure 1000 times more traffic. This means that when just 0.1% of users switch to streaming, the required database capacity will exceed the original one.</p>
+<p><strong>Competition:</strong> The trend of streaming grew rapidly. Blockbuster, the old competitor of Netflix, was attempting to launch their own streaming business. Hulu launched a similar streaming service in 2008, and Amazon also started its Amazon Prime Video service.</p>
+<p><strong>Content Costs:</strong> Netflix had to negotiate with content providers to expand its streaming library, which was a significant cost in the streaming business.</p>
+<h2 id="part-3-details-of-data-center-migration">Part 3: Details of Data Center Migration</h2>
+<h3 id="planning-and-strategy">Planning and Strategy</h3>
+<p>Netflix&rsquo;s first decision was whether to build a self-hosted data center or utilize AWS, which was built by one of its biggest competitors. Netflix chose the latter, allowing them to concentrate their investments on digital video content and web development.</p>
+<p>This decision positioned Netflix as a pioneer in the application of cloud computing. Their strategy was to figure out the real challenges that their customers were facing. The first was dynamically handling movies encoding workloads. Netflix employed thousands of EC2 instances to build a movie encoding farm. This approach ensures that Netflix can handle peak demands with sufficient capacity while also easily scaling down when workloads were light. The next was Quality of Service logging. Netflix moved its huge amount of log storage to S3 and collaborated with AWS to support Hadoop + Hive on the top of the origin AWS Elastic Map-Reduce service for log analysis.</p>
+<h3 id="execution-and-implementation">Execution and Implementation</h3>
+<p>At the start of 2010, Netflix decided to stop the expansion of their data center capacity. This decision led them to migrate their frontend workloads to AWS before the end of the year. To implement the migration, Netflix operated two systems in parallel: their original data center, their AWS infrastructure. The migration began by moving their simplest API services to the cloud, then followed by the simplest web pages, and then gradually rolled out all the pages and APIs. When requests for migrated pages were received, the data center would redirect them to the AWS cloud.</p>
+<p>Another problem Netflix faced was moving data to the AWS cloud. Netflix used the AWS Database Migration Service to continuously replicate their system of record data on the cloud. When users browsed web pages, they would read the replicated data from the cloud. Only when they made updates to their accounts would the updates be saved in the data center.</p>
+<h3 id="post-migration">Post-Migration</h3>
+<p>In 2011, Netflix decided to move not only their frontend web pages but also their entire backend infrastructure from the data center to the AWS cloud. The main challenge at this stage was how to back up data. To leverage the security and durability of the Amazon S3 service, Netflix set up a separate account in a different region for backup data. This ensured that the data couldn&rsquo;t be deleted but would be automatically purged every 90 days. More recently, Netflix has been using Amazon Glacier to host archived data at a very low cost.</p>
+<h2 id="part-4-the-final-stage">Part 4: The Final Stage</h2>
+<h3 id="completion-of-migration">Completion of Migration</h3>
+<p>In January 2016, Netflix finally completed its migration and shut down its last remaining data center. The last parts to migrate were billing and customer &amp; employee data management. Due to the progressive migration process, the new Netflix application is no longer a large monolithic application but a series of micro services each of which can be modified independently. This change brought CI/CD and DevOps into the leading role of project management.</p>
+<h3 id="impact-on-netflix">Impact on Netflix</h3>
+<p>Moving to the cloud has brought Netflix several benefits. Netflix has eight times as many streaming members than they did in 2008, with overall viewing growth by three orders of magnitude in eight years. On January 6, 2016, Netflix expanded its service to over 130 new countries, becoming a truly global Internet TV network.</p>
+<p>Leveraging multiple AWS cloud regions all over the world, Netflix can dynamically shift around and expand their global infrastructure capacity. The cloud infrastructure supports all extendable computing and storage requirements: business logic, distributed database and data analysis, video encoding, recommendation, and hundreds of other applications. The redundant components of the AWS cloud ensure high availability of Netflix services, providing a robust and reliable platform for continuous operation.</p>
+<h3 id="conclusion">Conclusion</h3>
+<p>Netflix’s migration to AWS was a game-changer that transformed the company’s operational framework. They used the migration strategies we now refer to as refactoring and re-architecting. They changed their system to be cloud-native with micro-services, automation and other cloud capabilities. By leveraging AWS’s scalability, resilience, cost-effectiveness, and advanced cloud services, Netflix was able to optimize its infrastructure, enhance user experiences, and drive global expansion.</p>
+<p>The success of this migration set a benchmark for other enterprises considering cloud adoption, demonstrating the potential of cloud computing in revolutionizing business operations. For example, Simian Army, a set of tools developed by Netflix to ensure the reliability and resilience of their services, has become a part of chaos engineering principles in the field of cloud computing.</p>
+<p>This journey of migration took Netflix 7 years, which was a great experiment that every follower can learn from, so that they don’t have to spend as much time as Netflix did.</p>
+<h2 id="references">References</h2>
+<p>Netflix. (2016, October 8). <em>Completing the Netflix cloud migration</em>. About Netflix. <a href="https://about.netflix.com/en/news/completing-the-netflix-cloud-migration">https://about.netflix.com/en/news/completing-the-netflix-cloud-migration</a></p>
+<p>Lino, G. (2024, September 6). Netflix business model: Streaming giant’s strategy. <em>Giro’s Newsletter</em>. <a href="https://www.girolino.com/netflix-streaming-success-decoded/">https://www.girolino.com/netflix-streaming-success-decoded/</a></p>
+<p>Oxford Executive Institute. (2024, November 24). <em>Case study: Netflix’s transition from DVD rental to streaming</em>. Oxford Executive Institute. <a href="https://oxfordexecutive.co.uk/case-study-netflixs-transition-from-dvd-rental-to-streaming/#Phase_1_Recognizing_the_Shift_2000%E2%80%932007">https://oxfordexecutive.co.uk/case-study-netflixs-transition-from-dvd-rental-to-streaming/#Phase_1_Recognizing_the_Shift_2000%E2%80%932007</a></p>
+<p>SlideShare. (2025). <em>Netflix in the cloud</em>. SlideShare. <a href="https://www.slideshare.net/slideshow/netflix-oncloudteaser/5388672">https://www.slideshare.net/slideshow/netflix-oncloudteaser/5388672</a></p>
+<p>To, M. (2024, February 12). <em>Migrating to cloud: Lessons from Netflix, brought up to date</em> [Video]. YouTube. <a href="https://www.youtube.com/watch?v=XrWII4ewrXA&amp;t=696s">https://www.youtube.com/watch?v=XrWII4ewrXA&t=696s</a></p>
+<p>Yevgeniy Sverdlik. (2016, February 11). <em>Netflix Shuts Down Final Bits of Own Data Center Infrastructure</em>. Datacenterknowledge.com. <a href="https://www.datacenterknowledge.com/infrastructure/netflix-shuts-down-final-bits-of-own-data-center-infrastructure">https://www.datacenterknowledge.com/infrastructure/netflix-shuts-down-final-bits-of-own-data-center-infrastructure</a></p>
+<p><em>Netflix’s AWS Migration | Journey to Become Streaming Giant</em>. (2024, March 7). IT Blog | Mobile App Development India | Offshore Web Development - Bacancytechnology.com. <a href="https://www.bacancytechnology.com/blog/netflix-aws-migration?utm_source=chatgpt.com#the-revolutionary-partnership-between-netflix-and-aws---why-netflix-choose-aws?-">https://www.bacancytechnology.com/blog/netflix-aws-migration?utm_source=chatgpt.com#the-revolutionary-partnership-between-netflix-and-aws---why-netflix-choose-aws?-</a></p>
+<p>The Aha DevOps Team. (2024, April 20). <em>Chaos Engineering in The Cloud: Lessons from Netflix’s Simian Army - Aha DevOps</em>. Aha DevOps. <a href="https://ahadevops.com/chaos-engineering-in-the-cloud-lessons-from-netflixs-simian-army/">https://ahadevops.com/chaos-engineering-in-the-cloud-lessons-from-netflixs-simian-army/</a></p>
+</div>
+
+            <h3>see also:</h3>
+              
+        </div>
+    </div>
+</div>
+
+
+    </main>
+
+    <footer class="bg-dark text-white mt-4">
+        <div class="py-4">
+            <p class="text-center mb-0">&copy; 2025 Blog Template. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+
+</html>

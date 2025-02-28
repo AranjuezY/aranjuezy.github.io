@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Netflix on Blog Template</title>
+    <link>/tags/netflix/</link>
+    <description>Recent content in Netflix on Blog Template</description>
+    <generator>Hugo</generator>
+    <language>en-US</language>
+    <lastBuildDate>Wed, 22 Jan 2025 12:09:54 -0500</lastBuildDate>
+    <atom:link href="/tags/netflix/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Netflix&#39;s Journey of Cloud Migration</title>
+      <link>/posts/netflixs-journey-of-cloud-migration/</link>
+      <pubDate>Wed, 22 Jan 2025 12:09:54 -0500</pubDate>
+      <guid>/posts/netflixs-journey-of-cloud-migration/</guid>
+      <description>&lt;h2 id=&#34;part-1-background-of-netflix&#34;&gt;Part 1: Background of Netflix&lt;/h2&gt;&#xA;&lt;h3 id=&#34;origin-mail-based-dvd-rental-business&#34;&gt;Origin: Mail-based DVD Rental Business&lt;/h3&gt;&#xA;&lt;p&gt;Netflix was founded by Reed Hastings and Marc Randolph in 1997. It started as a company that provides mail-based DVD rental service. A customer can browse and choose movies to rent on Netflix’s website, then Netflix will mail the movies to the customer’s address.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

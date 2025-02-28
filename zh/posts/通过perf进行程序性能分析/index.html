@@ -1,0 +1,197 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>通过perf进行程序性能分析 | Blog Template</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+
+    
+    
+    
+    <link rel="stylesheet" href="/css/styles.min.bf7274ed1e0e480f4aba84eda549d4c6054c1e1e321928ae11cb1c34cfa0d2ca.css" integrity="sha256-v3J07R4OSA9KuoTtpUnUxgVMHh4yGSiuEcscNM&#43;g0so=">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    
+    <script src="/js/bootstrap.bundle.min.0833b2e9c3a26c258476c46266e6877fc75218625162e0460be9a3a098a61c6c.js" integrity="sha256-CDOy6cOibCWEdsRiZuaHf8dSGGJRYuBGC&#43;mjoJimHGw=" defer></script>
+
+    
+    <script type="text/javascript" src="/js/scripts.js"></script>
+    
+</head>
+
+<body>
+    <header>
+        <div class="dropdown">
+            <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                aria-expanded="false">
+                zh
+            </button>
+            <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="/zh">zh</a></li>
+                <li><a class="dropdown-item" href="/">en</a></li>
+            </ul>
+        </div>
+        
+        <nav class="navbar navbar-expand-lg mb-5">
+    <div class="d-flex px-5">
+        <a class="navbar-brand" href="/">Blog Template</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                
+                <li class="nav-item">
+                    <a class="nav-link" href="/zh/posts/">Posts</a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link" href="/search">Search</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+    </header>
+
+    <main class="container mt-4">
+        
+
+<div data-pagefind-body class="row">
+    <h1 class="pb-4">通过perf进行程序性能分析</h1>
+
+    <div class="col-3">
+        <div class="pt-5 px-2 sticky-top"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#1-引言">1. 引言</a></li>
+    <li><a href="#2-perf-的技术原理">2. <code>perf</code> 的技术原理</a></li>
+    <li><a href="#3-通过测试示例说明-perf-的基本用法">3. 通过测试示例说明 <code>perf</code> 的基本用法</a></li>
+    <li><a href="#4-总结">4. 总结</a></li>
+  </ul>
+</nav></div>
+    </div>
+
+    <div id="mainframe" class="col-9">
+        <div class="px-2">
+            <div><h2 id="1-引言">1. 引言</h2>
+<p><code>perf</code>是2009年Linux内核中引入的一个性能分析工具，最初用于Linux的性能计数器子模块。现代的<code>perf</code>可以用来跟踪和分析CPU使用率、内存访问、缓存命中率、I/O操作、上下文切换、函数调用频率、硬件事件、软件事件和内核事件等多种性能指标。</p>
+<h2 id="2-perf-的技术原理">2. <code>perf</code> 的技术原理</h2>
+<ul>
+<li>介绍性能监测的基本概念<br>
+一般来说，性能监测包含以下内容：性能指标：用于衡量系统或应用程序性能的具体数据，如CPU使用率、内存使用率、磁盘I/O、网络流量等。硬件性能计数器：嵌入在处理器中的计数器，用于记录特定硬件事件（如指令执行次数、缓存命中率、分支预测失败等）。软件性能计数器：由操作系统或应用程序定义的计数器，用于记录软件事件（如系统调用次数、上下文切换次数等）。采样：定期收集性能数据，以便分析系统或应用程序在不同时间点的性能表现。事件：特定的操作或状态变化，如函数调用、异常处理、硬件中断等。瓶颈：限制系统或应用程序性能的关键因素，通常需要通过优化来解决。基准测试：通过运行标准化的测试程序，评估系统或应用程序的性能。</li>
+<li><code>perf</code> 的工作原理
+从下面这张图可以看出，<code>perf</code>在内核中的核心组件是<code>perf_events</code>，而在用户空间中，。
+<figure class="diagram">
+    <img src="perf_event_component_stack.png" alt="stack" class="img-thumbnail d-block d-md-none" data-bs-toggle="modal" data-bs-target="#imageModal" style="width: 250px; height: auto;">
+    <img src="perf_event_component_stack.png" alt="stack" class="d-none d-md-block">
+</figure>
+
+<div class="modal fade" id="imageModal" tabindex="-1" aria-labelledby="imageModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-body text-center">
+                <img src="perf_event_component_stack.png" alt="stack" class="img-fluid">
+            </div>
+        </div>
+    </div>
+</div>
+
+<ul>
+<li>如何使用硬件计数器</li>
+<li>性能数据的获取方式（如采样和跟踪）
+<figure class="diagram">
+    <img src="perf_events_map.png" alt="map" class="img-thumbnail d-block d-md-none" data-bs-toggle="modal" data-bs-target="#imageModal" style="width: 250px; height: auto;">
+    <img src="perf_events_map.png" alt="map" class="d-none d-md-block">
+</figure>
+
+<div class="modal fade" id="imageModal" tabindex="-1" aria-labelledby="imageModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-body text-center">
+                <img src="perf_events_map.png" alt="map" class="img-fluid">
+            </div>
+        </div>
+    </div>
+</div>
+</li>
+</ul>
+</li>
+<li>常用功能模块
+<ul>
+<li><code>perf record</code>，<code>perf report</code>，<code>perf stat</code> 等</li>
+</ul>
+</li>
+<li>数据的分析和可视化技术</li>
+</ul>
+<h2 id="3-通过测试示例说明-perf-的基本用法">3. 通过测试示例说明 <code>perf</code> 的基本用法</h2>
+<ul>
+<li>示例程序的概述</li>
+<li>如何安装和配置 <code>perf</code></li>
+<li>使用 <code>perf</code> 进行性能测量的具体步骤
+<figure class="screenshot">
+    <img src="before.png" alt="before" class="img-thumbnail d-block d-md-none" data-bs-toggle="modal" data-bs-target="#imageModal" style="width: 250px; height: auto;">
+    <img src="before.png" alt="before" class="d-none d-md-block">
+</figure>
+
+<div class="modal fade" id="imageModal" tabindex="-1" aria-labelledby="imageModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-body text-center">
+                <img src="before.png" alt="before" class="img-fluid">
+            </div>
+        </div>
+    </div>
+</div>
+
+<figure class="screenshot">
+    <img src="after.png" alt="after" class="img-thumbnail d-block d-md-none" data-bs-toggle="modal" data-bs-target="#imageModal" style="width: 250px; height: auto;">
+    <img src="after.png" alt="after" class="d-none d-md-block">
+</figure>
+
+<div class="modal fade" id="imageModal" tabindex="-1" aria-labelledby="imageModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-body text-center">
+                <img src="after.png" alt="after" class="img-fluid">
+            </div>
+        </div>
+    </div>
+</div>
+
+<ul>
+<li>记录性能数据</li>
+<li>输出和分析结果</li>
+</ul>
+</li>
+<li>示例的结果解读</li>
+<li>问题分析及性能优化建议</li>
+</ul>
+<h2 id="4-总结">4. 总结</h2>
+<ul>
+<li>总结 <code>perf</code> 的应用价值</li>
+</ul>
+</div>
+
+            <h3>see also:</h3>
+              
+        </div>
+    </div>
+</div>
+
+
+    </main>
+
+    <footer class="bg-dark text-white mt-4">
+        <div class="py-4">
+            <p class="text-center mb-0">&copy; 2025 Blog Template. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+
+</html>

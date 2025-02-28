@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Categories on Blog Template</title>
+    <link>/categories/</link>
+    <description>Recent content in Categories on Blog Template</description>
+    <generator>Hugo</generator>
+    <language>en-US</language>
+    <lastBuildDate>Thu, 30 Jan 2025 11:55:47 -0500</lastBuildDate>
+    <atom:link href="/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Article</title>
+      <link>/categories/article/</link>
+      <pubDate>Thu, 30 Jan 2025 11:55:47 -0500</pubDate>
+      <guid>/categories/article/</guid>
+      <description></description>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tags on Blog Template</title>
+    <link>/tags/</link>
+    <description>Recent content in Tags on Blog Template</description>
+    <generator>Hugo</generator>
+    <language>en-US</language>
+    <lastBuildDate>Thu, 30 Jan 2025 11:55:47 -0500</lastBuildDate>
+    <atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>AWS</title>
+      <link>/tags/aws/</link>
+      <pubDate>Thu, 30 Jan 2025 11:55:47 -0500</pubDate>
+      <guid>/tags/aws/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Azure</title>
+      <link>/tags/azure/</link>
+      <pubDate>Thu, 30 Jan 2025 11:55:47 -0500</pubDate>
+      <guid>/tags/azure/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Cloud</title>
+      <link>/tags/cloud/</link>
+      <pubDate>Thu, 30 Jan 2025 11:55:47 -0500</pubDate>
+      <guid>/tags/cloud/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Google Cloud</title>
+      <link>/tags/google-cloud/</link>
+      <pubDate>Thu, 30 Jan 2025 11:55:47 -0500</pubDate>
+      <guid>/tags/google-cloud/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Netflix</title>
+      <link>/tags/netflix/</link>
+      <pubDate>Wed, 22 Jan 2025 12:09:54 -0500</pubDate>
+      <guid>/tags/netflix/</guid>
+      <description></description>
+    </item>
+  </channel>
+</rss>
